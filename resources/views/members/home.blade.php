@@ -11,12 +11,6 @@
                                 {{ session('success') }}
                             </div>
                     @endif
-                    <div class="col-lg-12">
-                        <div class="alert alert-success alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <img id="avatar1" class="img-responsive" src="uploads/w3school-chipher.png"><strong> Welcome! {{Auth::user()->name}}</strong>
-                        </div>
-                    </div>
 
                     <!-- block -->
                     <div class="block">
