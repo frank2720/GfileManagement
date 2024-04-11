@@ -18,14 +18,14 @@
                     */?>
                     <li class="dropdown">
                         <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                            <img id="avatar1" class="img-responsive" src="uploads/w3school-chipher.png">
+                            <img id="avatar1" class="img-responsive" src="/avatars/{{ Auth::user()->avatar }}">
                             &nbsp;{{Auth::user()->name}}
                             <i class="caret"></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a tabindex="-1" href="change_password_admin.php"><i class="icon-cog"></i>&nbsp;Change Password</a>
-                                <a tabindex="-1" href="#mymodal3" data-toggle="modal"><i class="icon-picture"></i>&nbsp;Change Picture</a>
+                                <a href="{{ route('user.profile') }}"><i class="icon-picture"></i>&nbsp;Change Picture</a>
                             </li>
                             <li class="divider"></li>
                             <li>

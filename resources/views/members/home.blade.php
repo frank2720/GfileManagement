@@ -6,6 +6,11 @@
         @include('members.sidebar')
         <div class="span9" id="content">
             <div class="row-fluid">
+                    @if (session('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('success') }}
+                            </div>
+                    @endif
                     <div class="col-lg-12">
                         <div class="alert alert-success alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

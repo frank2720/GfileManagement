@@ -20,4 +20,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('user.profile');
+Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'store'])->name('user.profile.store');
 Route::get('/tithes', [HomeController::class, 'tithes'])->name('tithes');
