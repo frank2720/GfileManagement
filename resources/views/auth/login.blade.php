@@ -3,6 +3,11 @@
 @section('content')
 <div id="login" class="animate form">
     <form method="POST" action="{{ route('login') }}">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         <h1>Sign in</h1> 
         @csrf
 

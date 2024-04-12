@@ -84,7 +84,7 @@
             </div>
             <!--/ Codrops top bar -->
             <header>
-                <h1>GROUP MANAGER<span>ACCESS POINT</span></h1>
+                <h1>JOKA OKECH<span> SELF GROUP</span></h1>
             </header>
             <section>
                 <div id="container_demo" >
