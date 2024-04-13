@@ -9,16 +9,16 @@
     <!------/.* manage memberss sidebar*------->
     <li>
       <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#bs">
-        <i class="icon-chevron-right"></i><i class="icon-user"></i>&nbsp;manage Acount
+        <i class="icon-chevron-right"></i><i class="icon-user"></i>&nbsp;Manage Acount
         <div class="muted pull-right"><i class="caret"></i></div>
       </a>
       <ul id="bs" class="collapse">
         <li class="">
-          <a href="Tithe.php"><i class="icon-chevron-right"></i><i class="icon-user"></i> my Tithes</a>
+          <a href="Tithe.php"><i class="icon-chevron-right"></i><i class="icon-user"></i>My Contributions</a>
         </li>
 
         <li>
-          <a href="give.php"><i class="icon-chevron-right"></i><i class="icon-laptop"></i> Other Givings
+          <a href="give.php"><i class="icon-chevron-right"></i><i class="icon-laptop"></i> Other Contributions
           </a>
         </li>
 
@@ -27,38 +27,19 @@
 
     <!------/.* finance sidebar*------->
     <li>
-      <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#bs1"><i class="icon-chevron-right"></i><i class="icon-globe"></i>&nbsp;Givings/Tithes
+      <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#bs1"><i class="icon-chevron-right"></i><i class="icon-globe"></i>&nbsp;Contributions
         <div class="muted pull-right"><i class="caret"></i></div>
       </a>
       <ul id="bs1" class="collapse">
         <li class="">
-          <a href="Tithes.php"><i class="icon-chevron-right"></i><i class="icon-money"></i> Tithe Now</a>
+          <a href="Tithes.php"><i class="icon-chevron-right"></i><i class="icon-money"></i> Registration Fee</a>
         </li>
         <li class="">
-          <a href="offering.php"><i class="icon-chevron-right"></i><i class="icon-money"></i> Give Offering</a>
+          <a href="offering.php"><i class="icon-chevron-right"></i><i class="icon-money"></i> Monthly Contributions</a>
         </li>
         <li class="">
-          <a href="giving.php"><i class="icon-chevron-right"></i><i class="icon-money"></i> Other Giving</a>
+          <a href="giving.php"><i class="icon-chevron-right"></i><i class="icon-money"></i> Other Contributions</a>
         </li>
-      </ul>
-    </li>
-
-    <!------/.* manage Reservation sidebar*------->
-    <li>
-      <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#mr">
-        <i class="icon-chevron-right"></i><i class="icon-user"></i>&nbsp;Reservation
-        <div class="muted pull-right"><i class="caret"></i></div>
-      </a>
-      <ul id="mr" class="collapse">
-        <li class="">
-          <a href="selectEvent.php"><i class="icon-chevron-right"></i><i class="icon-user"></i> Reserve My Sport</a>
-        </li>
-
-        <li>
-          <a href="myReserve.php"><i class="icon-chevron-right"></i><i class="icon-laptop"></i> My Reservation
-          </a>
-        </li>
-
       </ul>
     </li>
 
@@ -74,18 +55,8 @@
           <a href="events.php"><i class="icon-chevron-right"></i><i class="icon-trophy"></i> Upcoming Events</a>
         </li>
         <li class="">
-          <a href="upcoming.php"><i class="icon-chevron-right"></i><i class="icon-calendar"></i> Upcoming Birthdays </a>
+          <a href="upcoming.php"><i class="icon-chevron-right"></i><i class="icon-calendar"></i> Birthdays </a>
         </li>
-      </ul>
-    </li>
-    <!------/.* notification sidebar*------->
-    <li class="active">
-      <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#bs4"><i class="icon-chevron-right"></i><i class="icon-search icon-large"></i>&nbsp;Advance Search
-        <div class="muted pull-right"><i class="caret"></i></div>
-      </a>
-      <ul id="bs4" class="collapse">
-
-
       </ul>
     </li>
 
