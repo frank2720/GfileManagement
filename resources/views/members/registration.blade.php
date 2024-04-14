@@ -4,18 +4,18 @@
         <div class="row-fluid">
             @include('members.sidebar')
             <div class="span3" id="adduser">
-                @include('members.add_tithe')		   			
+                @include('members.add_fee')		   			
             </div>
             <div class="span6" id="">
                 <div class="row-fluid">
-                    <!-- block -->
-                        
-                    <div class="empty">
+                    <!-- block -->	
+
+                    @if (session('success'))
                         <div class="alert alert-success alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <i class="icon-info-sign"></i>  <strong>Note!:</strong> Select the checbox if you want to delete?
+                            {{ session('success') }}
                         </div>
-                    </div>	
+                    @endif
                     
                     <?php/*	
                     $count_user=mysqli_query($conn,"select * from tithe Where na= '$session_id'");

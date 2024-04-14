@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RegistrationContoller;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,5 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('user.profile');
 Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'store'])->name('user.profile.store');
-Route::get('/tithes', [HomeController::class, 'tithes'])->name('tithes');
+Route::get('/registration', [RegistrationContoller::class, 'registrations'])->name('registrations');
+Route::post('/registration', [RegistrationContoller::class, 'store'])->name('registration.fee.store');

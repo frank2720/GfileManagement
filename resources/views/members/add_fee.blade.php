@@ -2,17 +2,17 @@
     <!-- block -->
     <div class="block">
       <div class="navbar navbar-inner block-header">
-        <div class="muted pull-left"><i class="icon-plus-sign icon-large"> Enter Your Giving</i></div>
+        <div class="muted pull-left"><i class="icon-plus-sign icon-large">Registration Payment</i></div>
       </div>
       <div class="block-content collapse in">
         <div class="span12">
-          <form method="post">
+          <form method="post" action="{{route('registration.fee.store')}}">
+            @csrf
             <div class="control-group">
               <div class="controls">
-                <input class="input focused" name="amount" id="focusedInput" type="text" placeholder="Amount" required>
+                <input class="input focused" name="fee" id="focusedInput" type="number" min="300" placeholder="Amount" required>
               </div>
             </div>
-
             <div class="control-group">
               <div class="controls">
                 <input class="input focused" name="trcode" id="focusedInput" type="text" placeholder="Transaction Code" required>
@@ -24,13 +24,13 @@
 
             <div class="control-group">
               <div class="controls">
-                <button name="save" class="btn btn-info" id="save" data-placement="right" title="Click to Save"><i class="icon-plus-sign icon-large"> Save</i></button>
-                <script type="text/javascript">
+                <button type="submit" class="btn btn-info" id="save" data-placement="right" title="Click to Register"><i class="icon-plus-sign icon-large"> Register</i></button>
+                <!--<script type="text/javascript">
                   $(document).ready(function() {
                     $('#save').tooltip('show');
                     $('#save').tooltip('hide');
                   });
-                </script>
+                </script> -->
               </div>
             </div>
           </form>

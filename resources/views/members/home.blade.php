@@ -7,9 +7,10 @@
         <div class="span9" id="content">
             <div class="row-fluid">
                     @if (session('success'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('success') }}
-                            </div>
+                        <div class="alert alert-success alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            {{ session('success') }}
+                        </div>
                     @endif
 
                     <!-- block -->
@@ -39,7 +40,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <a href="{{route('tithes')}}">
+                                                    <a href="{{route('registrations')}}">
                                                         <div class="modal-footer">
                                                             <span class="pull-left">Register Now</span>
                                                             <span class="pull-right"><i class="icon-chevron-right"></i></span>

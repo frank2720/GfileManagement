@@ -25,9 +25,4 @@ class HomeController extends Controller
     {
         return view('members.home');
     }
-
-    public function tithes()
-    {
-        return view('members.Tithes');
-    }
 }
