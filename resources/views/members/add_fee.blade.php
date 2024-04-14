@@ -10,18 +10,24 @@
             @csrf
             <div class="control-group">
               <div class="controls">
-                <input class="input focused" name="fee" id="focusedInput" type="number" min="300" placeholder="Amount" required>
+                <input class="input focused @error('fee') is-invalid @enderror" name="fee" id="focusedInput" type="text" placeholder="Amount">
               </div>
+              @error('fee')
+              <span class="invalid-feedback text-danger" role="alert">
+                  <p style="color: red">{{ $message }}</p>
+              </span>
+              @enderror
             </div>
             <div class="control-group">
               <div class="controls">
-                <input class="input focused" name="trcode" id="focusedInput" type="text" placeholder="Transaction Code" required>
+                <input class="input focused @error('trcode') is-invalid @enderror" name="trcode" id="focusedInput" type="text" placeholder="Transaction Code">
               </div>
+              @error('trcode')
+              <span class="invalid-feedback" role="alert">
+                  <p style="color: red">{{ $message }}</p>
+              </span>
+              @enderror
             </div>
-
-
-
-
             <div class="control-group">
               <div class="controls">
                 <button type="submit" class="btn btn-info" id="save" data-placement="right" title="Click to Register"><i class="icon-plus-sign icon-large"> Register</i></button>

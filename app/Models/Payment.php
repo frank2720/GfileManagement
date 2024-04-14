@@ -6,21 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Member extends Model
+class Payment extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = [
-        'fee',
         'trcode',
     ];
 
-    /**
-     * Get the user that owns the registration fee
+     /**
+     * Get the member that owns the transaction
      */
 
-    public function user():BelongsTo
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
+     public function member():BelongsTo
+     {
+         return $this->belongsTo(Member::class, 'user_id');
+     }
 }

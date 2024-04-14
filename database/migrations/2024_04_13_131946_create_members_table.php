@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->integer('fee');
+            $table->string('trcode')->unique();
             $table->string('user_id')->unique();
             $table->timestamps();
         });
