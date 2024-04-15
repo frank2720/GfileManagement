@@ -15,17 +15,12 @@
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             {{ session('success') }}
                         </div>
-                    @endif
-                    
-                    <?php/*	
-                    $count_user=mysqli_query($conn,"select * from tithe Where na= '$session_id'");
-                    $count = mysqli_num_rows($count_user);
-                    */?>	 
+                    @endif	 
                     <div id="block_bg" class="block">
                         <div class="navbar navbar-inner block-header">
                             <div class="muted pull-left"></i><i class="icon-user"></i> Registered members</div>
                             <div class="muted pull-right">
-                            Number of members: <span class="badge badge-info">8</span>
+                            Number of members: <span class="badge badge-info">{{$TotalMembers}}</span>
                             </div>
                         </div>
                         <div class="block-content collapse in">
@@ -43,16 +38,18 @@
                                     </thead>
                                     <tbody>
                                 
-                                        <tr>
-                                        <td width="30">
-                                        <input id="optionsCheckbox" disabled class="uniform_on" name="selector[]" type="checkbox" value="<?php //echo $id; ?>">
-                                        </td>
-                                        <td><?php// echo $row['fname']; ?> <?php// echo $row['lname']; ?></td>
-
-                                        <td><?php //echo $row['Amount']; ?></td>
-                                        <td><?php// echo $row['Trcode']; ?></td>
-                                        <td><?php //echo $row['paytime']; ?></td>
-                                        </tr>
+                                        @foreach ($members as $member)
+                                            <tr>
+                                                <td width="30">
+                                                    <input id="optionsCheckbox" disabled class="uniform_on" name="selector[]" type="checkbox" value="<?php //echo $id; ?>">
+                                                </td>
+                                                <td>{{$member->user->name}}</td>
+            
+                                                <td>{{$member->fee}}</td>
+                                                <td>{{$member->user->phone}}</td>
+                                                <td>{{date_format($member->created_at,'d/m/Y')}}</td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                                 </form>

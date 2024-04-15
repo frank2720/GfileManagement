@@ -40,6 +40,18 @@ class DatabaseSeeder extends Seeder
             'trcode'=>fake()->numerify('QRST###'),
             'phone'=>fake()->numerify('07########'),
         ]);
+        Payment::factory()->create([
+            'trcode'=>fake()->numerify('VSTD###'),
+            'phone'=>fake()->numerify('07########'),
+        ]);
+        Payment::factory()->create([
+            'trcode'=>fake()->numerify('RSVG###'),
+            'phone'=>fake()->numerify('07########'),
+        ]);
+        Payment::factory()->create([
+            'trcode'=>fake()->numerify('UYRQ###'),
+            'phone'=>fake()->numerify('07########'),
+        ]);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

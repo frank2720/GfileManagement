@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Member;
+use App\Models\User;
 use App\Rules\PaymentExist;
 use Illuminate\Http\Request;
 
@@ -18,13 +20,29 @@ class RegistrationContoller extends Controller
     }
   
     /**
-     * Show the application dashboard.
+     * Show the application registration dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function registrations()
     {
-        return view('members.registration');
+        $tmembers = Member::count();
+        $members = Member::with('user')->paginate(8);
+        return view('members.registration',[
+            'TotalMembers'=>$tmembers,
+            'members'=>$members,
+        ]);
+    }
+
+    public function members()
+    {
+        $tmembers = Member::count();
+        $members = Member::with('user')->paginate(8);
+        //dd($members);
+        return view('members.registered',[
+            'TotalMembers'=>$tmembers,
+            'members'=>$members,
+        ]);
     }
 
     /**
@@ -47,6 +65,6 @@ class RegistrationContoller extends Controller
         ]);
         $request->user()->fee()->create($fee);
 
-        return back()->with('success', 'Registration successfull.');
+        return redirect(route('registered.members'))->with('success', 'Registration successfull.');
     }
 }

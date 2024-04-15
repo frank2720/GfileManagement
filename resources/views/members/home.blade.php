@@ -29,23 +29,40 @@
                                                     <div class="panel-heading">
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
-                                                                <div class="span3"><br />
-                                                                    <i class="fa fa-money fa-5x"></i><br />
-                                                                </div>
-                                                                <div class="span8 text-right"><br />
-                                                                    <div class="huge">Ksh. {{__(number_format(300))}}</div>
-                                                                    <div>Registration Fee</div><br />
-                                                                </div>
+                                                                
+                                                                @if ($member == 'Not registered')
+                                                                    <div class=""><br />
+                                                                        <div class="huge">Not Registered</div>
+                                                                    </div>
+                                                                @else
+                                                                    <div class="span3"><br />
+                                                                        <i class="fa fa-money fa-5x"></i><br />
+                                                                    </div>
+                                                                    <div class="span8 text-right"><br />
+                                                                        <div class="huge">Ksh. {{__(number_format(300))}}</div>
+                                                                        <div>Registration Fee Paid</div><br />
+                                                                    </div>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    @if ($member !== 'Not registered')
+                                                    <a href="{{route('registered.members')}}">
+                                                        <div class="modal-footer">
+                                                            <span class="pull-left">Registered</span>
+                                                            <span class="pull-right"> See Members <i class="icon-chevron-right"></i></span>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </a>
+                                                    @else
                                                     <a href="{{route('registrations')}}">
                                                         <div class="modal-footer">
-                                                            <span class="pull-left">Register Now</span>
+                                                            <span class="pull-left">Register now</span>
                                                             <span class="pull-right"><i class="icon-chevron-right"></i></span>
                                                             <div class="clearfix"></div>
                                                         </div>
                                                     </a>
+                                                    @endif    
                                                 </div>
                                             </div>
         

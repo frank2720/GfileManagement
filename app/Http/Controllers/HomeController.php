@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Member;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('members.home');
+        $id = Auth()->id();
+        $member = Member::with('user')->find($id)??'Not registered';
+        return view('members.home',['member'=>$member]);
     }
 }
