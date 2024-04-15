@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->string('trcode')->unique();
-            $table->string('member_id');
+            $table->string('phone')->unique();
             $table->timestamps();
         });
     }

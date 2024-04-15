@@ -31,12 +31,12 @@
             <div class="control-group">
               <div class="controls">
                 <button type="submit" class="btn btn-info" id="save" data-placement="right" title="Click to Register"><i class="icon-plus-sign icon-large"> Register</i></button>
-                <!--<script type="text/javascript">
+                <script type="text/javascript">
                   $(document).ready(function() {
                     $('#save').tooltip('show');
                     $('#save').tooltip('hide');
                   });
-                </script> -->
+                </script> 
               </div>
             </div>
           </form>
@@ -45,15 +45,3 @@
     </div>
     <!-- /block -->
   </div>
-
-  <?php/*
-
-   if (isset($_POST['save'])) {
-     $firstname = $_POST['amount'];
-     $lastname = $_POST['trcode'];
-     mysqli_query($conn, "insert into tithe (Amount,Trcode,na) values('$firstname','$lastname','$session_id')") or die(mysqli_error());
-   */?>
-  <?php/*
-   }
-
-   */?>

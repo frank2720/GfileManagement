@@ -3,7 +3,13 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Member;
+use App\Models\Payment;
+use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +19,27 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // \App\Models\User::factory(10)->create();
+
+        User::factory()
+            ->create([
+                'name'=>'Jared Onjiri',
+                'email'=>Str::random().'@gmail.com',
+                'password'=>Hash::make('admin1234'),
+                'phone'=>fake()->numerify('07########'),
+                'birthday'=>'1996-04-25',
+                'gender'=>'Male'
+            ]);
+
+        Member::factory()->create([
+            'fee'=>300,
+            'trcode'=>'QRST246',
+            'user_id'=>1
+        ]);
+
+        Payment::factory()->create([
+            'trcode'=>fake()->numerify('QRST###'),
+            'phone'=>fake()->numerify('07########'),
+        ]);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

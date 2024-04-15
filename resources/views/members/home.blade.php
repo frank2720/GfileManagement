@@ -23,7 +23,6 @@
                             <div class="span12">
                                 <div class="block-content collapse in">
                                     <div id="page-wrapper">
-                                    
                                         <div class="row-fluid">
                                             <div class="span6">
                                                 <div class="panel panel-primary">

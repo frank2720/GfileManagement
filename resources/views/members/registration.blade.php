@@ -23,56 +23,36 @@
                     */?>	 
                     <div id="block_bg" class="block">
                         <div class="navbar navbar-inner block-header">
-                            <div class="muted pull-left"></i><i class="icon-user"></i> Giving List</div>
+                            <div class="muted pull-left"></i><i class="icon-user"></i> Registered members</div>
                             <div class="muted pull-right">
-                            Number of Givings: <span class="badge badge-info"><?php // echo $count; ?></span>
+                            Number of members: <span class="badge badge-info">8</span>
                             </div>
                         </div>
                         <div class="block-content collapse in">
                             <div class="span12">
                             <form action="delete_users.php" method="post">
                                 <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
-                                <a data-placement="right" title="Click to Delete check item"  data-toggle="modal" href="#user_delete" id="delete"  class="btn btn-danger" name=""><i class="icon-trash icon-large"> Delete</i></a>
-                                <script type="text/javascript">
-                                    $(document).ready(function(){
-                                    $('#delete').tooltip('show');
-                                    $('#delete').tooltip('hide');
-                                    });
-                                </script>
-                                @include('members.modal_delete')
                                     <thead>
                                         <tr>
                                             <th></th>
-                                            <th>Name</th>
-                                            <th>Amount</th>
-                                            <th>Transaction Id</th>
-                                    
-                                            <th>Date</th>
+                                            <th>Full Name</th>
+                                            <th>Registration Fee</th>
+                                            <th>Phone Number</th>
+                                            <th>Date Joined</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                                <?php /*
-                                                $user_query = mysqli_query($conn,"select * from members INNER JOIN tithe ON members.id=tithe.na where na='$session_id'")or die(mysqli_error());
-                                                while($row = mysqli_fetch_array($user_query)){
-                                                $id = $row['id'];
-                                                */?>
                                 
-                                            <tr>
-                                            <td width="30">
-                                            <input id="optionsCheckbox" class="uniform_on" name="selector[]" type="checkbox" value="<?php //echo $id; ?>">
-                                            </td>
-                                            <td><?php// echo $row['fname']; ?> <?php// echo $row['lname']; ?></td>
+                                        <tr>
+                                        <td width="30">
+                                        <input id="optionsCheckbox" disabled class="uniform_on" name="selector[]" type="checkbox" value="<?php //echo $id; ?>">
+                                        </td>
+                                        <td><?php// echo $row['fname']; ?> <?php// echo $row['lname']; ?></td>
 
-                                            <td><?php //echo $row['Amount']; ?></td>
-                                            <td><?php// echo $row['Trcode']; ?></td>
-                                            <td><?php //echo $row['paytime']; ?></td>
-                                        
-                                                                                                    
-                                            
-
-                                
-                                            </tr>
-                                            <?php// } ?>
+                                        <td><?php //echo $row['Amount']; ?></td>
+                                        <td><?php// echo $row['Trcode']; ?></td>
+                                        <td><?php //echo $row['paytime']; ?></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                                 </form>

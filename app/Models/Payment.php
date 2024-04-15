@@ -12,14 +12,7 @@ class Payment extends Model
     
     protected $fillable = [
         'trcode',
+        'phone',
     ];
 
-     /**
-     * Get the member that owns the transaction
-     */
-
-     public function member():BelongsTo
-     {
-         return $this->belongsTo(Member::class, 'user_id');
-     }
 }
