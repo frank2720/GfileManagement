@@ -17,8 +17,9 @@ class MemberRegisteredAccess
     public function handle(Request $request, Closure $next): Response
     {
         $user_id = auth()->user()->id;
+        $name = auth()->user()->name;
         if (Member::where('user_id',$user_id)->exists()) {
-            return redirect(route('registered.members'));
+            return redirect(route('registered.members'))->with('success',$name.' you are already a registered member!');
         }
         return $next($request);
     }

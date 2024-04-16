@@ -1,5 +1,5 @@
 <div class="span3" id="sidebar">
-  <img id="admin_avatar" class="img-circle" style="object-fit: cover" src="/avatars/{{ Auth::user()->avatar }}">
+  <img id="admin_avatar" class="img-circle" style="object-fit: cover" src="/avatars/{{ Auth::user()->avatar??'1712834159.jpg' }}">
 
   <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
     <li class="active">
@@ -14,11 +14,11 @@
       </a>
       <ul id="bs" class="collapse">
         <li class="">
-          <a href="Tithe.php"><i class="icon-chevron-right"></i><i class="icon-user"></i>My Contributions</a>
+          <a href="{{route('contribution.monthly')}}"><i class="icon-chevron-right"></i><i class="icon-user"></i>My Monthly Contributions</a>
         </li>
 
         <li>
-          <a href="give.php"><i class="icon-chevron-right"></i><i class="icon-laptop"></i> Other Contributions
+          <a href=""><i class="icon-chevron-right"></i><i class="icon-laptop"></i> Other Contributions
           </a>
         </li>
 
@@ -32,13 +32,13 @@
       </a>
       <ul id="bs1" class="collapse">
         <li class="">
-          <a href="Tithes.php"><i class="icon-chevron-right"></i><i class="icon-money"></i> Registration Fee</a>
+          <a href="{{route('registrations')}}"><i class="icon-chevron-right"></i><i class="icon-money"></i> Registration</a>
         </li>
         <li class="">
-          <a href="offering.php"><i class="icon-chevron-right"></i><i class="icon-money"></i> Monthly Contributions</a>
+          <a href="{{route('contribution.monthly')}}"><i class="icon-chevron-right"></i><i class="icon-money"></i> Monthly Contributions</a>
         </li>
         <li class="">
-          <a href="giving.php"><i class="icon-chevron-right"></i><i class="icon-money"></i> Other Contributions</a>
+          <a href=""><i class="icon-chevron-right"></i><i class="icon-money"></i> Other Contributions</a>
         </li>
       </ul>
     </li>
@@ -52,10 +52,10 @@
       </a>
       <ul id="bs5" class="collapse">
         <li class="">
-          <a href="events.php"><i class="icon-chevron-right"></i><i class="icon-trophy"></i> Upcoming Events</a>
+          <a href=""><i class="icon-chevron-right"></i><i class="icon-trophy"></i> Upcoming Events</a>
         </li>
         <li class="">
-          <a href="upcoming.php"><i class="icon-chevron-right"></i><i class="icon-calendar"></i> Birthdays </a>
+          <a href=""><i class="icon-chevron-right"></i><i class="icon-calendar"></i> Birthdays </a>
         </li>
       </ul>
     </li>

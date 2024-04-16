@@ -25,7 +25,7 @@
                         <div class="row-fluid"> 
                         <div class="empty">
                             <div class="pull-right">
-                                <a href="print_tithe.php" class="btn btn-info" id="print" data-placement="left" title="Click to Print"><i class="icon-print icon-large"></i> Print List</a> 		      
+                                <a href="" class="btn btn-info" id="print" data-placement="left" title="Click to Print"><i class="icon-print icon-large"></i> Print List</a> 		      
                                 <script type="text/javascript">
                                 $(document).ready(function(){
                                 $('#print').tooltip('show');

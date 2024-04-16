@@ -39,7 +39,7 @@
                                                                         <i class="fa fa-money fa-5x"></i><br />
                                                                     </div>
                                                                     <div class="span8 text-right"><br />
-                                                                        <div class="huge">Ksh. {{__(number_format(300))}}</div>
+                                                                        <div class="huge">Ksh. {{$member->fee}}</div>
                                                                         <div>Registration Fee Paid</div><br />
                                                                     </div>
                                                                 @endif
@@ -75,7 +75,14 @@
                                                                     <i class="fa fa-money fa-5x"></i><br />
                                                                 </div>
                                                                 <div class="span8 text-right"><br />
-                                                                    <div class="huge">Ksh. {{__(number_format(2000))}}</div>
+                                                                    @php
+                                                                        $Tcontributions = json_decode($Tcontributions, true);
+                                                                        $totalAmount = 0;
+                                                                        foreach ($Tcontributions as $Tcontribution) {
+                                                                            $totalAmount += $Tcontribution['amount'];
+                                                                        }
+                                                                    @endphp
+                                                                    <div class="huge">Ksh. {{number_format(intval($totalAmount))}}</div>
                                                                     <div>Monthly Contributions</div><br />
                                                                 </div>
                                                             </div>
@@ -93,12 +100,6 @@
                                         </div>
                                     </div>
                                     <div id="page-wrapper">
-                                        <?php/*
-                                        $result2 = mysqli_query($conn, "select *, SUm(Amount) AS value_sum from giving where na='$session_id' ");
-                                        $row = mysqli_fetch_assoc($result2);
-                                        $sum2 = $row['value_sum'];
-
-                                        */?>
                                         <div class="row-fluid">
                                             <div class="span6">
                                                 <div class="panel panel-yellow">
@@ -109,13 +110,13 @@
                                                                     <i class="fa fa-money fa-5x"></i><br />
                                                                 </div>
                                                                 <div class="span8 text-right"><br />
-                                                                    <div class="huge">700</div>
+                                                                    <div class="huge">0</div>
                                                                     <div>Other Contributions</div><br />
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <a href="giving.php">
+                                                    <a href="">
                                                         <div class="modal-footer">
                                                             <span class="pull-left">Contribute</span>
                                                             <span class="pull-right"><i class="icon-chevron-right"></i></span>
@@ -139,7 +140,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <a href="events.php">
+                                                    <a href="">
                                                         <div class="modal-footer">
                                                             <span class="pull-left">View</span>
                                                             <span class="pull-right"><i class="icon-chevron-right"></i></span>
@@ -167,7 +168,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <a href="events.php">
+                                                    <a href="">
                                                         <div class="modal-footer">
                                                             <span class="pull-left">View</span>
                                                             <span class="pull-right"><i class="icon-chevron-right"></i></span>

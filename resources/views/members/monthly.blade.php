@@ -15,19 +15,25 @@
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             {{ session('success') }}
                         </div>
-                    @endif	 
+                    @endif
+                    @if (empty(json_decode($contributions)))
+                        <div id="block_bg" class="block">
+                            <div class="block-content collapse in">
+                                <div class="span12">
+                                    <h2>You have 0 monthly contributions</h2>
+                                </div>
+                            </div>
+                        </div>
+                    @else
                     <div id="block_bg" class="block">
                         <div class="navbar navbar-inner block-header">
                             <div class="muted pull-left">Monthly contributions</div>
-                            <div class="muted pull-right">
-                            Months contributed: <span class="badge badge-info">2</span>
-                            </div>
                         </div>
                         <div class="container-fluid">
                             <div class="row-fluid"> 
                             <div class="empty">
                                 <div class="pull-right">
-                                    <a href="print_tithe.php" class="btn btn-info" id="print" data-placement="left" title="Click to Print"><i class="icon-print icon-large"></i> Print List Contributions</a> 		      
+                                    <a href="" class="btn btn-info" id="print" data-placement="left" title="Click to Print"><i class="icon-print icon-large"></i> Print Monthly Contributions</a> 		      
                                     <script type="text/javascript">
                                     $(document).ready(function(){
                                     $('#print').tooltip('show');
@@ -47,29 +53,48 @@
                                             <th></th>
                                             <th>Full Name</th>
                                             <th>Amount</th>
-                                            <th>Account Used</th>
+                                            <th>Phone Number</th>
                                             <th>Date</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($contributions as $contribution)
                                         <tr>
                                             <td width="30">
                                                 <input id="optionsCheckbox" disabled class="uniform_on" name="selector[]" type="checkbox" value="<?php //echo $id; ?>">
                                             </td>
-                                            <td>Name</td>
+                                            <td>{{$contribution->user->name}}</td>
         
-                                            <td>500</td>
-                                            <td>some number</td>
-                                            <td>23/4/2023</td>
+                                            <td>{{$contribution->amount}}</td>
+                                            <td>{{$contribution->user->phone}}</td>
+                                            <td>{{date_format($contribution->created_at,'d-m-Y h:i:sa')}}</td>
                                         </tr>
-                                
+                                        @endforeach
+                                        
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><strong>Total Monthly Contribution:</strong></td>
+                                            @php
+                                                $Tcontributions = json_decode($Tcontributions, true);
+                                                $totalAmount = 0;
+                                                foreach ($Tcontributions as $Tcontribution) {
+                                                    $totalAmount += $Tcontribution['amount'];
+                                                }
+                                            @endphp
+                                            <td><strong>Ksh {{number_format(intval($totalAmount))}}</strong></td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                                 </form>
                             </div>
                         </div>
                     </div>
                     <!-- /block -->
+                    @endif	 
                 </div>
             </div>
         </div>

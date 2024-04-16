@@ -18,7 +18,7 @@
                     */?>
                     <li class="dropdown">
                         <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                            <img id="avatar1" class="img-responsive" src="/avatars/{{ Auth::user()->avatar }}">
+                            <img id="avatar1" class="img-responsive" src="/avatars/{{ Auth::user()->avatar??'1712834159.jpg' }}">
                             &nbsp;{{Auth::user()->name}}
                             <i class="caret"></i>
                         </a>

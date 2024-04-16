@@ -18,7 +18,7 @@ class MembersAccess
     {
         $user_id = auth()->user()->id;
         if (!Member::where('user_id',$user_id)->exists()) {
-            return redirect(route('registrations'));
+            return redirect(route('registrations'))->with('success',auth()->user()->name.' kindly pay the registration fee');
         }
         return $next($request);
     }
