@@ -1,5 +1,5 @@
 <div class="span3" id="sidebar">
-  <img id="admin_avatar" class="img-circle" src="/avatars/{{ Auth::user()->avatar }}">
+  <img id="admin_avatar" class="img-circle" style="object-fit: cover" src="/avatars/{{ Auth::user()->avatar }}">
 
   <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
     <li class="active">

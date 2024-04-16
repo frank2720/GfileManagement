@@ -81,7 +81,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <a href="offering.php">
+                                                    <a href="{{route('contribution.monthly')}}">
                                                         <div class="modal-footer">
                                                             <span class="pull-left">Contribute</span>
                                                             <span class="pull-right"><i class="icon-chevron-right"></i></span>

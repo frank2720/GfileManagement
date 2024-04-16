@@ -4,7 +4,7 @@
         <div class="row-fluid">
             @include('members.sidebar')
             <div class="span3" id="adduser">
-                @include('members.add_fee')		   			
+                @include('members.registration_fee')		   			
             </div>
             <div class="span6" id="">
                 <div class="row-fluid">

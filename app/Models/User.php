@@ -55,4 +55,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Member::class, 'user_id');
     }
+
+    public function monthly():HasMany
+    {
+        return $this->hasMany(MonthlyContribution::class, 'user_id');
+    }
 }

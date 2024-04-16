@@ -45,11 +45,6 @@ class RegistrationContoller extends Controller
         ]);
     }
 
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
     public function store(Request $request)
     {
         $fee = $request->validate([
