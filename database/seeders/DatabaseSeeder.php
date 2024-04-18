@@ -27,7 +27,8 @@ class DatabaseSeeder extends Seeder
                 'password'=>Hash::make('admin1234'),
                 'phone'=>fake()->numerify('07########'),
                 'birthday'=>'1996-04-25',
-                'gender'=>'Male'
+                'gender'=>'Male',
+                'isAdmin'=>true,
             ]);
 
         Member::factory()->create([
