@@ -28,7 +28,7 @@ Route::group([
         'middleware'=>'is_admin',
         'as'=>'admin',
 ],function(){
-        Route::get('home',[AdminHomeController::class,'index'])->name('home');
+        Route::get('home',[AdminHomeController::class,'index'])->name('index.home');
 });
 
 
