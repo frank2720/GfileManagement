@@ -13,9 +13,6 @@
             <!--.nav-collapse -->
             <div class="nav-collapse collapse">
                 <ul class="nav pull-right">
-                    <?php /*$query = mysqli_query($conn, "select * from members where id = '$session_id'") or die(mysqli_error());
-                    $row = mysqli_fetch_array($query);
-                    */?>
                     <li class="dropdown">
                         <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
                             <img id="avatar1" class="img-responsive" src="/avatars/{{ Auth::user()->avatar??'1712834159.jpg' }}">

@@ -14,11 +14,8 @@
           <!--.nav-collapse -->
             <div class="nav-collapse collapse">
                 <ul class="nav pull-right">
-                <?php /*$query= mysqli_query($conn,"select * from admin where admin_id = '$session_id'")or die(mysqli_error());
-                      $row = mysqli_fetch_array($query);
-                */?>
                     <li class="dropdown">
-                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><img id="avatar1" class="img-responsive" src="<?php //echo $row['adminthumbnails']; ?>">&nbsp;<?php// echo $row['firstname']." ".$row['lastname'];  ?> <i class="caret"></i>
+                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><img id="avatar1" class="img-responsive" src="/avatars/{{ Auth::user()->avatar??'1712834159.jpg' }}">&nbsp;{{Auth::user()->name}} <i class="caret"></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li>
@@ -27,7 +24,16 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a tabindex="-1" href="logout.php"><i class="icon-signout"></i>&nbsp;Logout</a>
+                                <a tabindex="-1" href="{{route('logout')}}" 
+                                        onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                            <i class="icon-signout"></i>
+                                            &nbsp;
+                                            Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                </form>
                             </li>
                         </ul>
                     </li>

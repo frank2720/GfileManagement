@@ -32,27 +32,24 @@
       </li>
       <!------/.* finance sidebar*------->
       <li>
-        <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#bs1"><i class="icon-chevron-right"></i><i class="icon-money"></i>&nbsp;Givings/Tithes
+        <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#bs1"><i class="icon-chevron-right"></i><i class="icon-money"></i>&nbsp;Contributions
           <div class="muted pull-right"><i class="caret"></i></div>
         </a>
         <ul id="bs1" class="collapse">
           <li class="">
-            <a href="Tithes.php"><i class="icon-chevron-right"></i><i class="icon-money"></i> Tithes Paid</a>
+            <a href="Tithes.php"><i class="icon-chevron-right"></i><i class="icon-money"></i>Registrations</a>
           </li>
           <li class="">
-            <a href="addTithes.php"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> Add Tithes</a>
+            <a href="addTithes.php"><i class="icon-chevron-right"></i><i class="icon-money"></i>Monthly Contributions</a>
           </li>
           <li class="">
-            <a href="offering.php"><i class="icon-chevron-right"></i><i class="icon-money"></i> Offering</a>
+            <a href="giving.php"><i class="icon-chevron-right"></i><i class="icon-money"></i>Other Contributions</a>
           </li>
           <li class="">
-            <a href="addoffering.php"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i>Add Offering</a>
+            <a href="offering.php"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i>Add Monthly Contribution</a>
           </li>
           <li class="">
-            <a href="giving.php"><i class="icon-chevron-right"></i><i class="icon-money"></i> Other Giving</a>
-          </li>
-          <li class="">
-            <a href="addgiving.php"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> Add Other Giving</a>
+            <a href="addoffering.php"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i>Add Other Contribution</a>
           </li>
         </ul>
       </li>
@@ -111,7 +108,7 @@
         </a>
         <ul id="mr" class="collapse">
           <li class="">
-            <a href="Reservationreport.php"><i class="icon-chevron-right"></i><i class="icon-user"></i>Meeting Minutes</a>
+            <a href="Reservationreport.php"><i class="icon-chevron-right"></i><i class="icon-user"></i>Meeting Reports</a>
           </li>
 
           <li>
