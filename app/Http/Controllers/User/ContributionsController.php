@@ -1,26 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
-use App\Models\MonthlyContribution;
 use App\Rules\PaymentExist;
 use Illuminate\Http\Request;
+use App\Models\MonthlyContribution;
+use App\Http\Controllers\Controller;
 
 class ContributionsController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+    
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * function for monthly contribution.
-     */
     public function monthly_contr()
     {
         $id = Auth()->id();

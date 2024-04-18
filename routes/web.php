@@ -1,13 +1,11 @@
 <?php
 
-use App\Http\Controllers\ContributionsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\MembersAccess;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RegistrationContoller;
-use App\Http\Middleware\MemberRegisteredAccess;
+use App\Http\Controllers\User\HomeController;
+use App\Http\Controllers\User\ProfileController;
+use App\Http\Controllers\User\RegistrationController;
+use App\Http\Controllers\User\ContributionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,17 +22,30 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
+Route::group([
+        'prefix'=>'admin',
+        'middleware'=>'is_admin',
+        'as'=>'admin',
+],function(){
+        //admin Routes
+});
+
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
 Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
-Route::get('/members_registration', [RegistrationContoller::class, 'registrations'])
-        ->middleware(MemberRegisteredAccess::class)
-        ->name('registrations');
-Route::get('/members_registered', [RegistrationContoller::class, 'members'])
-        ->middleware(MembersAccess::class)
-        ->name('registered.members');
-Route::post('/registration', [RegistrationContoller::class, 'store'])->name('registration.fee.store');
-Route::get('/monthly_contribution', [ContributionsController::class, 'monthly_contr'])
-        ->middleware(MembersAccess::class)
-        ->name('contribution.monthly');
+Route::post('/registration', [RegistrationController::class, 'store'])->name('registration.fee.store');
 Route::post('/monthly_contribution', [ContributionsController::class, 'store_monthly_contr'])->name('monthly.fee.store');
+
+Route::group([
+        'middleware'=>'registered_member'
+],function(){
+        Route::get('/members_registered', [RegistrationController::class, 'members'])->name('registered.members');
+        Route::get('/monthly_contribution', [ContributionsController::class, 'monthly_contr'])->name('contribution.monthly');
+});
+
+Route::group([
+        'middleware'=>'already_registered'
+],function(){
+        Route::get('/members_registration', [RegistrationController::class, 'registrations'])->name('registrations');
+});

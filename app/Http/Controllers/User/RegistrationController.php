@@ -1,29 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use App\Models\Member;
-use App\Models\User;
 use App\Rules\PaymentExist;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class RegistrationContoller extends Controller
+class RegistrationController extends Controller
 {
-        /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
-  
-    /**
-     * Show the application registration dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+
     public function registrations()
     {
         $tmembers = Member::count();
