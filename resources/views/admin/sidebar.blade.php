@@ -6,7 +6,7 @@
 
     <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
       <li class="active">
-        <a href="/admin/home"><i class="icon-chevron-right"></i><i class="icon-home"></i>&nbsp;Dashboard</a>
+        <a href="{{route('admin.home')}}"><i class="icon-chevron-right"></i><i class="icon-home"></i>&nbsp;Dashboard</a>
       </li>
 
       <!------/.* manage memberss sidebar*------->

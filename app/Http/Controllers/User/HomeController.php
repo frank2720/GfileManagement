@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function index()
     {
         $id = Auth()->id();
-        $member = Member::with('user')->find($id)??'Not registered';
+        $member = Member::with('user')->where('user_id','=',$id)->get()??'Not registered';
         $Tcontributions = MonthlyContribution::where('user_id','=',$id)->get('amount');
         return view('members.home',['member'=>$member,'Tcontributions'=>$Tcontributions]);
     }

@@ -30,7 +30,7 @@
             </div>
             <div class="control-group">
               <div class="controls">
-                <button type="submit" class="btn btn-info" id="save" data-placement="right" title="Click to Register"><i class="icon-plus-sign icon-large"> Register</i></button>
+                <button type="submit" class="btn btn-info" id="save" data-placement="right" title="Click to Pay"><i class="icon-plus-sign icon-large"> Pay</i></button>
                 <script type="text/javascript">
                   $(document).ready(function() {
                     $('#save').tooltip('show');

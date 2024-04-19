@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\MembersController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\HomeController;
@@ -26,9 +27,12 @@ Auth::routes();
 Route::group([
         'prefix'=>'admin',
         'middleware'=>'is_admin',
-        'as'=>'admin',
+        'as'=>'admin.',
 ],function(){
-        Route::get('home',[AdminHomeController::class,'index'])->name('index.home');
+        Route::get('home',[AdminHomeController::class,'index'])->name('home');
+        Route::get('members',[MembersController::class,'members'])->name('members');
+        Route::get('add_members',[MembersController::class,'add_member'])->name('add_members');
+        Route::post('add_members',[MembersController::class,'create'])->name('create.member');
 });
 
 

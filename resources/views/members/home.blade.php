@@ -38,7 +38,7 @@
                                                                         <i class="fa fa-money fa-5x"></i><br />
                                                                     </div>
                                                                     <div class="span8 text-right"><br />
-                                                                        <div class="huge">Ksh. {{$member->fee}}</div>
+                                                                        <div class="huge">Ksh. {{$member[0]->fee}}</div>
                                                                         <div>Registration Fee Paid</div><br />
                                                                     </div>
                                                                 @endif
