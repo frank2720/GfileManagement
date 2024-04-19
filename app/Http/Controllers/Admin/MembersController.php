@@ -6,6 +6,7 @@ use App\Models\Member;
 use App\Rules\PaymentExist;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\MonthlyContribution;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -59,5 +60,14 @@ class MembersController extends Controller
         $membership->save();
 
         return back()->with('success', 'Member registered succefully');
+    }
+    public function monthly_contr()
+    {
+        $monthly_contributions = MonthlyContribution::with('user')->get();
+        $Tmonthly_contr = MonthlyContribution::count();
+        return view('admin.monthly',[
+            'monthly_contributions'=>$monthly_contributions,
+            'Tmonthly_contr'=>$Tmonthly_contr,
+        ]);
     }
 }

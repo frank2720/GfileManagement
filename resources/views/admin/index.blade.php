@@ -95,7 +95,7 @@
                         </div>
                      </div>	
                     </div>
-                    <a href="">							  
+                    <a href="{{route('admin.monthly.contributions')}}">							  
                         <div class="modal-footer">
                             <span class="pull-left">Monthly contributions</span>
                             <span class="pull-right"><i class="icon-chevron-right"></i></span>
@@ -119,7 +119,7 @@
                         </div>
                      </div>	
                     </div>
-                    <a href="birthdays.php">							  
+                    <a href="">							  
                         <div class="modal-footer">
                             <span class="pull-left">View Birthdays</span>
                             <span class="pull-right"><i class="icon-chevron-right"></i></span>

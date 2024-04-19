@@ -33,6 +33,7 @@ Route::group([
         Route::get('members',[MembersController::class,'members'])->name('members');
         Route::get('add_members',[MembersController::class,'add_member'])->name('add_members');
         Route::post('add_members',[MembersController::class,'create'])->name('create.member');
+        Route::get('monthly_contributions',[MembersController::class,'monthly_contr'])->name('monthly.contributions');
 });
 
 

@@ -16,16 +16,21 @@
         </a>
         <ul id="bs" class="collapse">
           <li class="">
-            <a href="membersDetail.php"><i class="icon-chevron-right"></i><i class="icon-user"></i> Member Details</a>
+            <a href="{{route('admin.members')}}"><i class="icon-chevron-right"></i><i class="icon-user"></i> Member Details</a>
           </li>
 
           <li>
-            <a href="add_members.php"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> Add members
+            <a href="{{route('admin.add_members')}}"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> Add members
             </a>
           </li>
 
           <li>
-            <a href="birthdays.php"><i class="icon-chevron-right"></i><i class="icon-calendar"></i> Birthdays
+            <a href=""><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> Register a Member
+            </a>
+          </li>
+
+          <li>
+            <a href=""><i class="icon-chevron-right"></i><i class="icon-calendar"></i> Birthdays
             </a>
           </li>
         </ul>
@@ -37,19 +42,19 @@
         </a>
         <ul id="bs1" class="collapse">
           <li class="">
-            <a href="Tithes.php"><i class="icon-chevron-right"></i><i class="icon-money"></i>Registrations</a>
+            <a href=""><i class="icon-chevron-right"></i><i class="icon-money"></i>Registrations</a>
           </li>
           <li class="">
-            <a href="addTithes.php"><i class="icon-chevron-right"></i><i class="icon-money"></i>Monthly Contributions</a>
+            <a href="{{route('admin.monthly.contributions')}}"><i class="icon-chevron-right"></i><i class="icon-money"></i>Monthly Contributions</a>
           </li>
           <li class="">
-            <a href="giving.php"><i class="icon-chevron-right"></i><i class="icon-money"></i>Other Contributions</a>
+            <a href=""><i class="icon-chevron-right"></i><i class="icon-money"></i>Other Contributions</a>
           </li>
           <li class="">
-            <a href="offering.php"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i>Add Monthly Contribution</a>
+            <a href=""><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i>Add Monthly Contribution</a>
           </li>
           <li class="">
-            <a href="addoffering.php"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i>Add Other Contribution</a>
+            <a href=""><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i>Add Other Contribution</a>
           </li>
         </ul>
       </li>
@@ -62,7 +67,7 @@
         <ul id="bs2" class="collapse">
 
           <li class="">
-            <a href="admin_user.php"><i class="icon-chevron-right"></i><i class="icon-user"></i>&nbsp;System User</a>
+            <a href=""><i class="icon-chevron-right"></i><i class="icon-user"></i>&nbsp;System User</a>
           </li>
         </ul>
       </li>
@@ -74,10 +79,10 @@
         </a>
         <ul id="bs3" class="collapse">
           <li class="">
-            <a href="activity_log.php"><i class="icon-chevron-right"></i><i class="icon-warning-sign"></i> Activity Log</a>
+            <a href=""><i class="icon-chevron-right"></i><i class="icon-warning-sign"></i> Activity Log</a>
           </li>
           <li class="">
-            <a href="user_log.php"><i class="icon-chevron-right"></i><i class="icon-warning-sign"></i> User Log</a>
+            <a href=""><i class="icon-chevron-right"></i><i class="icon-warning-sign"></i> User Log</a>
           </li>
         </ul>
       </li>
@@ -88,13 +93,13 @@
         </a>
         <ul id="bs5" class="collapse">
           <li class="">
-            <a href="events.php"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> Add event</a>
+            <a href=""><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> Add event</a>
           </li>
           <li class="">
-            <a href="addResrveSlots.php"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> Add Slots</a>
+            <a href=""><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> Add Slots</a>
           </li>
           <li class="">
-            <a href="upcoming.php"><i class="icon-chevron-right"></i><i class="icon-trophy"></i> Upcoming </a>
+            <a href=""><i class="icon-chevron-right"></i><i class="icon-trophy"></i> Upcoming </a>
           </li>
         </ul>
       </li>
