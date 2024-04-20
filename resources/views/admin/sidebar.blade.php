@@ -42,7 +42,7 @@
         </a>
         <ul id="bs1" class="collapse">
           <li class="">
-            <a href=""><i class="icon-chevron-right"></i><i class="icon-money"></i>Registration(s) Fee</a>
+            <a href="{{route('admin.registration.fee')}}"><i class="icon-chevron-right"></i><i class="icon-money"></i>Registration(s) Fee</a>
           </li>
           <li class="">
             <a href="{{route('admin.monthly.contributions')}}"><i class="icon-chevron-right"></i><i class="icon-money"></i>Monthly Contributions</a>
@@ -51,7 +51,7 @@
             <a href=""><i class="icon-chevron-right"></i><i class="icon-money"></i>Other Contributions</a>
           </li>
           <li class="">
-            <a href=""><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i>Add Monthly Contribution</a>
+            <a href="{{route('admin.add.monthly')}}"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i>Add Monthly Contribution</a>
           </li>
           <li class="">
             <a href=""><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i>Add Other Contribution</a>

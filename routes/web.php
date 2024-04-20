@@ -36,6 +36,9 @@ Route::group([
         Route::get('monthly_contributions',[MembersController::class,'monthly_contr'])->name('monthly.contributions');
         Route::get('register_member',[MembersController::class,'register'])->name('register.member');
         Route::post('register_member',[MembersController::class,'store_member'])->name('store.member');
+        Route::get('membership_fees',[MembersController::class,'registration_fees'])->name('registration.fee');
+        Route::get('monthly_contribution',[MembersController::class,'add_monthly'])->name('add.monthly');
+        Route::post('monthly_contribution',[MembersController::class,'monthly_store'])->name('monthly.money.store');
 });
 
 

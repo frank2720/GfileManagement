@@ -97,4 +97,40 @@ class MembersController extends Controller
         $membership->save();
         return back()->with('success', 'Member registered succefully');
     }
+    public function registration_fees()
+    {
+        $tmembers = Member::count();
+        $members = Member::with('user')->get();
+        return view('admin.registrations',[
+            'members'=>$members,
+            'TotalMembers'=>$tmembers,
+        ]);
+    }
+
+    public function add_monthly()
+    {
+        return view('admin.add_monthly');
+    }
+
+    public function monthly_store(Request $request)
+    {
+        $request->validate([
+            'phone' => ['required','string',new NotSystemUser],
+            'amount' => ['required','numeric'],
+            'trcode' => ['required','unique:monthly_contributions',new PaymentExist],
+        ],
+        [
+            'amount.numeric'=>'Enter valid amount',
+            'amount.required'=>'Enter the amount paid',
+            'trcode.unique'=>'Code transcation already updated',
+            'trcode.required'=>'Transaction code required',
+        ]);
+        $user_id = User::where('phone',$request->phone)->get('id');
+        $contribution = new MonthlyContribution;
+        $contribution->amount = $request->amount;
+        $contribution->trcode = $request->trcode;
+        $contribution->user_id = $user_id[0]->id;
+        $contribution->save();
+        return back()->with('success', 'Monthly contribution added succefully');
+    }
 }
