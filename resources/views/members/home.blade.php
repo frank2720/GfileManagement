@@ -28,8 +28,10 @@
                                                     <div class="panel-heading">
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
-                                                                
-                                                                @if ($member == 'Not registered')
+                                                                @php
+                                                                    $member_id = json_decode($member)
+                                                                @endphp
+                                                                @if (empty($member_id))
                                                                     <div class=""><br />
                                                                         <div class="huge">Not Registered</div>
                                                                     </div>
@@ -45,7 +47,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    @if ($member !== 'Not registered')
+                                                    @if (!empty($member_id))
                                                     <a href="{{route('registered.members')}}">
                                                         <div class="modal-footer">
                                                             <span class="pull-left">Registered</span>

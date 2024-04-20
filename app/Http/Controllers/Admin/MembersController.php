@@ -8,10 +8,16 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\MonthlyContribution;
 use App\Models\User;
+use App\Rules\NotSystemUser;
 use Illuminate\Support\Facades\Hash;
 
 class MembersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function members(){
         $members=Member::with('user')->get();
         $Tmembers=Member::count();
@@ -69,5 +75,25 @@ class MembersController extends Controller
             'monthly_contributions'=>$monthly_contributions,
             'Tmonthly_contr'=>$Tmonthly_contr,
         ]);
+    }
+
+    public function register()
+    {
+        return view('admin.register');
+    }
+    public function store_member(Request $request)
+    {
+        $request->validate([
+            'phone'=>['required','string',new NotSystemUser],
+            'fee' => ['required','numeric','min:300'],
+            'trcode' => ['required','unique:members',new PaymentExist],
+        ]);
+        $user_id = User::where('phone',$request->phone)->get('id');
+        $membership = new Member;
+        $membership->fee = $request->fee;
+        $membership->trcode = $request->trcode;
+        $membership->user_id = $user_id[0]->id;
+        $membership->save();
+        return back()->with('success', 'Member registered succefully');
     }
 }

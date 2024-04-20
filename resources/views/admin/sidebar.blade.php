@@ -25,7 +25,7 @@
           </li>
 
           <li>
-            <a href=""><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> Register a Member
+            <a href="{{route('admin.register.member')}}"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> Register a Member
             </a>
           </li>
 
