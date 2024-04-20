@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\MonthlyContribution;
 use App\Models\User;
+use App\Rules\MemberRegistered;
 use App\Rules\NotSystemUser;
 use Illuminate\Support\Facades\Hash;
 
@@ -84,7 +85,7 @@ class MembersController extends Controller
     public function store_member(Request $request)
     {
         $request->validate([
-            'phone'=>['required','string',new NotSystemUser],
+            'phone'=>['required','string',new NotSystemUser,new MemberRegistered],
             'fee' => ['required','numeric','min:300'],
             'trcode' => ['required','unique:members',new PaymentExist],
         ]);

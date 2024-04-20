@@ -25,7 +25,7 @@
           </li>
 
           <li>
-            <a href="{{route('admin.register.member')}}"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> Register a Member
+            <a href="{{route('admin.register.member')}}"><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> User to Member
             </a>
           </li>
 
@@ -42,7 +42,7 @@
         </a>
         <ul id="bs1" class="collapse">
           <li class="">
-            <a href=""><i class="icon-chevron-right"></i><i class="icon-money"></i>Registrations</a>
+            <a href=""><i class="icon-chevron-right"></i><i class="icon-money"></i>Registration(s) Fee</a>
           </li>
           <li class="">
             <a href="{{route('admin.monthly.contributions')}}"><i class="icon-chevron-right"></i><i class="icon-money"></i>Monthly Contributions</a>
@@ -124,15 +124,7 @@
         </ul>
       </li>
       <li class="active">
-        <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#bs4"><i class="icon-chevron-right"></i><i class="icon-search icon-large"></i>&nbsp;Advance Search
-          <div class="muted pull-right"><i class="caret"></i></div>
-        </a>
-        <ul id="bs4" class="collapse">
-          <li>
-            <a href="#mymodal" data-toggle="modal" tabindex="1"><i class="icon-chevron-right"></i><i class="icon-search"></i>&nbsp;members</a>
-          </li>
-
-        </ul>
+        <a href="{{route('home')}}"><i class="icon-chevron-right"></i><i class="icon-home"></i>&nbsp;Members Dashboard</a>
       </li>
     </ul>
     @include('admin.search_form')

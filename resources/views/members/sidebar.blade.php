@@ -59,8 +59,11 @@
         </li>
       </ul>
     </li>
-
-
+    @if (Auth::user()->isAdmin == 1)
+      <li class="active">
+        <a href="{{route('admin.home')}}"><i class="icon-chevron-right"></i><i class="icon-home"></i>&nbsp;Admin Dashboard</a>
+      </li>
+    @endif
   </ul>
   @include('members.search_form')
 </div>
