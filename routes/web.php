@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DocumentsController;
+use App\Http\Controllers\User\DocumentController as UserDocumentsController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\MembersController;
 use Illuminate\Support\Facades\Auth;
@@ -34,7 +35,7 @@ Route::group([
         Route::get('members',[MembersController::class,'members'])->name('members');
         Route::get('add_members',[MembersController::class,'add_member'])->name('add_members');
         Route::post('add_members',[MembersController::class,'create'])->name('create.member');
-        Route::get('{id}',[MembersController::class,'edit_member'])->name('edit.member');
+        Route::get('edit_{id}',[MembersController::class,'edit_member'])->name('edit.member');
         Route::put('update/{id}',[MembersController::class,'update'])->name('update.member');
         Route::get('delete/{id}',[MembersController::class,'delete_member'])->name('delete.member');
         Route::get('monthly_contributions',[MembersController::class,'monthly_contr'])->name('monthly.contributions');
@@ -51,8 +52,11 @@ Route::group([
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
 Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
+Route::get('/password', [ProfileController::class, 'password_update'])->name('password');
+Route::put('/password', [ProfileController::class, 'password_store'])->name('password.store');
 Route::post('/registration', [RegistrationController::class, 'store'])->name('registration.fee.store');
 Route::post('/monthly_contribution', [ContributionsController::class, 'store_monthly_contr'])->name('monthly.fee.store');
+Route::get('/documents',[UserDocumentsController::class,'index'])->name('documents.list');
 
 Route::group([
         'middleware'=>'registered_member'

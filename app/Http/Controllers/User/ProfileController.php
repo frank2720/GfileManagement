@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -29,5 +32,21 @@ class ProfileController extends Controller
         Auth()->user()->update(['avatar'=>$avatarName]);
   
         return back()->with('success', 'Avatar updated successfully.');
+    }
+
+    public function password_update()
+    {
+        return view('members.password');
+    }
+    public function password_store(Request $request)
+    {
+        $request->validate([
+            'password'=>['required','confirmed']
+        ]);
+        $user_id = Auth()->user()->id;
+        $user = User::find($user_id);
+        $user->password = Hash::make($request->password);
+        $user->save();
+        return back()->with('success', 'Password changed successfully.');
     }
 }

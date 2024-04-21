@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <span class="brand">members Panel</span>
+                <span class="brand">Members Panel</span>
             </div>
             <!--.nav-collapse -->
             <div class="nav-collapse collapse">
@@ -21,7 +21,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a tabindex="-1" href="change_password_admin.php"><i class="icon-cog"></i>&nbsp;Change Password</a>
+                                <a tabindex="-1" href="{{route('password')}}"><i class="icon-cog"></i>&nbsp;Change Password</a>
                                 <a tabindex="-1" href="#mymodal3" data-toggle="modal"><i class="icon-picture"></i>&nbsp;Change Picture</a>
                             </li>
                             <li class="divider"></li>

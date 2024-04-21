@@ -54,12 +54,6 @@
         <div class="control-group">
           <div class="controls">
             <button type="submit" class="btn btn-info" id="save" data-placement="right" title="Click to Register"><i class="icon-plus-sign icon-large"> Register Member</i></button>
-            <script type="text/javascript">
-              $(document).ready(function() {
-                $('#save').tooltip('show');
-                $('#save').tooltip('hide');
-              });
-            </script>
           </div>
         </div>
         </form>

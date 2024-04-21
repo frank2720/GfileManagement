@@ -59,6 +59,17 @@
         </li>
       </ul>
     </li>
+    <li>
+      <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#bs7"><i class="icon-chevron-right"></i><i class="icon-book"></i>&nbsp;Documents
+        <div class="muted pull-right"><i class="caret"></i></div>
+      </a>
+      <ul id="bs7" class="collapse">
+        <li class="">
+          <a href="{{route('documents.list')}}"><i class="icon-chevron-right"></i><i class="icon-laptop"></i> Meeting Reports & Minutes</a>
+        </li>
+      </ul>
+    </li>
+
     @if (Auth::user()->isAdmin == 1)
       <li class="active">
         <a href="{{route('admin.home')}}"><i class="icon-chevron-right"></i><i class="icon-home"></i>&nbsp;Admin Dashboard</a>
