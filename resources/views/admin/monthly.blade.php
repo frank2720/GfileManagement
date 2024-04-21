@@ -12,11 +12,7 @@
               $('#add').tooltip('hide');
               });
              </script> 
-             <div id="sc" align="center"><image src="images/sclogo.png" width="45%" height="45%"/></div>
-        <?php	/*
-         $count_student=mysqli_query($conn,"select * from tithe");
-         $count = mysqli_num_rows($count_student);
-         */?>	 
+             <div id="sc" align="center"><image src="images/sclogo.png" width="45%" height="45%"/></div> 
            <div id="block_bg" class="block">
                 <div class="navbar navbar-inner block-header">
                      <div class="muted pull-left"><i class="icon-reorder icon-large"></i> Members Monthly Contributions</div>
@@ -57,12 +53,7 @@
 </thead>
 <tbody>
 <!-----------------------------------Content------------------------------------>
-<?php/*
-$student_query = mysqli_query($conn,"SELECT *FROm members  LEFT OUTER JOIN tithe ON members.id = tithe.na WHERE tithe.titheid !='' ")or die(mysqli_error());
-while($row = mysqli_fetch_array($student_query)){
-$username = $row['titheid'];
 
-*/?>
       
       @forelse ($monthly_contributions as $m_contribution)
       <tr>

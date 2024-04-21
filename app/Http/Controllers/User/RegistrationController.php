@@ -27,7 +27,7 @@ class RegistrationController extends Controller
     public function members()
     {
         $tmembers = Member::count();
-        $members = Member::with('user')->paginate(8);
+        $members = Member::with('user')->get();
         //dd($members);
         return view('members.registered',[
             'TotalMembers'=>$tmembers,

@@ -68,6 +68,39 @@ class MembersController extends Controller
 
         return back()->with('success', 'Member registered succefully');
     }
+
+    public function edit_member($id)
+    {
+        $member = Member::with('user')->find($id);
+        return view('admin.edit_member_details',[
+            'member'=>$member
+        ]);
+    }
+
+    public function update(Request $request,$id)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'birthday' => ['required','date'],
+            'gender' => ['required'],
+        ]);
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->birthday = $request->birthday;
+        $user->gender = $request->gender;
+        $user->save();
+
+        return redirect(route('admin.members'))->with('success', $user->name.' details updated succefully');
+    }
+
+
+    public function delete_member($id)
+    {
+        $member = Member::find($id);
+        $member->delete();
+        return back()->with('success', 'Member deleted from records');
+    }
+    
     public function monthly_contr()
     {
         $monthly_contributions = MonthlyContribution::with('user')->get();

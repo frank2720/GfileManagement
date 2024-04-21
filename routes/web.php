@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DocumentsController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\MembersController;
 use Illuminate\Support\Facades\Auth;
@@ -33,12 +34,17 @@ Route::group([
         Route::get('members',[MembersController::class,'members'])->name('members');
         Route::get('add_members',[MembersController::class,'add_member'])->name('add_members');
         Route::post('add_members',[MembersController::class,'create'])->name('create.member');
+        Route::get('{id}',[MembersController::class,'edit_member'])->name('edit.member');
+        Route::put('update/{id}',[MembersController::class,'update'])->name('update.member');
+        Route::get('delete/{id}',[MembersController::class,'delete_member'])->name('delete.member');
         Route::get('monthly_contributions',[MembersController::class,'monthly_contr'])->name('monthly.contributions');
         Route::get('register_member',[MembersController::class,'register'])->name('register.member');
         Route::post('register_member',[MembersController::class,'store_member'])->name('store.member');
         Route::get('membership_fees',[MembersController::class,'registration_fees'])->name('registration.fee');
         Route::get('monthly_contribution',[MembersController::class,'add_monthly'])->name('add.monthly');
         Route::post('monthly_contribution',[MembersController::class,'monthly_store'])->name('monthly.money.store');
+        Route::get('documents',[DocumentsController::class,'index'])->name('documents.list');
+        Route::post('documents',[DocumentsController::class,'store'])->name('documents.upload');
 });
 
 

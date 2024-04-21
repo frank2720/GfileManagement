@@ -88,41 +88,16 @@
       </li>
 
       <li>
-        <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#bs5"><i class="icon-chevron-right"></i><i class="icon-book"></i>&nbsp;Events manager
+        <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#bs5"><i class="icon-chevron-right"></i><i class="icon-book"></i>&nbsp;Documents
           <div class="muted pull-right"><i class="caret"></i></div>
         </a>
         <ul id="bs5" class="collapse">
           <li class="">
-            <a href=""><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> Add event</a>
-          </li>
-          <li class="">
-            <a href=""><i class="icon-chevron-right"></i><i class="icon-plus-sign-alt"></i> Add Slots</a>
-          </li>
-          <li class="">
-            <a href=""><i class="icon-chevron-right"></i><i class="icon-trophy"></i> Upcoming </a>
+            <a href="{{route('admin.documents.list')}}"><i class="icon-chevron-right"></i><i class="icon-laptop"></i> Meeting Reports & Minutes</a>
           </li>
         </ul>
       </li>
-      <!------/.* notification sidebar*------->
 
-      <!------/.* manage Report sidebar*------->
-      <li>
-        <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#mr">
-          <i class="icon-chevron-right"></i><i class="icon-user"></i>&nbsp;Documents
-          <div class="muted pull-right"><i class="caret"></i></div>
-        </a>
-        <ul id="mr" class="collapse">
-          <li class="">
-            <a href="Reservationreport.php"><i class="icon-chevron-right"></i><i class="icon-user"></i>Meeting Reports</a>
-          </li>
-
-          <li>
-            <a href="myReserve.php"><i class="icon-chevron-right"></i><i class="icon-laptop"></i> Project Reports
-            </a>
-          </li>
-
-        </ul>
-      </li>
       <li class="active">
         <a href="{{route('home')}}"><i class="icon-chevron-right"></i><i class="icon-home"></i>&nbsp;Members Dashboard</a>
       </li>

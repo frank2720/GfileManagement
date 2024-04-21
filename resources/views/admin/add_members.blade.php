@@ -24,19 +24,9 @@
                     </div>
                     <div class="block-content collapse in">
                         <div class="span12">
-                            <form action="delete_memberss.php" method="post">
                                 <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
-                                    <a data-placement="right" title="Click to Delete check item" data-toggle="modal" href="#members_delete" id="delete" class="btn btn-danger" name=""><i class="icon-trash icon-large"> Delete</i></a>
-                                    <script type="text/javascript">
-                                        $(document).ready(function() {
-                                            $('#delete').tooltip('show');
-                                            $('#delete').tooltip('hide');
-                                        });
-                                    </script>
-                                    <?php //include('modal_delete.php'); ?>
                                     <thead>
-                                        <tr>
-                                            <th>Check</th>		        
+                                        <tr>		        
                                             <th>Name</th>
                                             <th>Gender </th>
                                             <th>Date of Birth</th>
@@ -47,9 +37,6 @@
                                     <tbody>
                                         @forelse ($members as $member)
                                         <tr>
-                                            <td width="30">
-                                                <input id="optionsCheckbox" class="uniform_on" name="selector[]" type="checkbox" value="{{$member->id}}">
-                                            </td>
                                             <td>{{$member->user->name}}</td>
                                             <td>{{$member->user->gender}}</td>
                                             <td>{{$member->user->birthday}}</td>
@@ -61,7 +48,6 @@
                                         @endforelse
                                     </tbody>
                                 </table>
-                            </form>
                         </div>
                     </div>
                 </div>
