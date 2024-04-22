@@ -13,11 +13,6 @@
                   <label class="control-label" for="inputEmail">mobile Number</label>
                   <div class="controls">
                   <input class="input focused" name="username" id="focusedInput" type="text" placeholder = "mobile Number" required>
-                  <?php/*
-                    $class_query = mysqli_query($conn,"select * from members")or die(mysqli_error());
-                    while($student_row = mysqli_fetch_array($class_query)){			
-                    */?>
-                                <?php// } ?>
                   </select>
                   </div>
                   </div>
