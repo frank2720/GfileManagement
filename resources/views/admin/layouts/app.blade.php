@@ -230,7 +230,6 @@
         }
     </style>
     <link href="bootstrap/css/admin_background.css" rel="stylesheet" media="screen" />
-    <link rel="shortcut icon" href="images/logo.png" />
 </head>
 <body>
     @include('admin.navbar')

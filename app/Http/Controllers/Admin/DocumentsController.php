@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Document;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 
 class DocumentsController extends Controller
@@ -35,5 +36,13 @@ class DocumentsController extends Controller
         $file->user_id =  Auth()->id();
         $file->save();
         return back()->with('success','Document uploaded successfully');
+    }
+    
+    public function destroy($doc):RedirectResponse
+    {
+        $document = Document::find($doc);
+        
+        $document->delete();
+        return back();
     }
 }

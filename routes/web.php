@@ -46,6 +46,7 @@ Route::group([
         Route::post('monthly_contribution',[MembersController::class,'monthly_store'])->name('monthly.money.store');
         Route::get('documents',[DocumentsController::class,'index'])->name('documents.list');
         Route::post('documents',[DocumentsController::class,'store'])->name('documents.upload');
+        Route::get('delete/document/{doc}',[DocumentsController::class,'destroy'])->name('documents.delete');
 });
 
 

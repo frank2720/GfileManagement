@@ -62,7 +62,7 @@
                       <th>Document Name</th>
                       <th> Uploaded By</th>
                       <th style="margin-right:16; margin-left:8; padding-left:16"> Date </th>
-                      <th></th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -78,7 +78,7 @@
                       <td style="text-align: center;">{{date_format($document->created_at,"d/m/Y")}}</td>
                       <td><a href="{{Storage::url($document->document)}}" class="btn btn-primary btn-lg" download="{{$document->name}}">Download</a> 
                         @if ($document->user->is(auth()->user()))
-                            <a href="{{Storage::url($document->document)}}" class="btn btn-danger btn-lg" download="{{$document->name}}">Delete</a>
+                            <a href="{{route('admin.documents.delete',['doc'=>$document->id])}}" class="btn btn-danger btn-lg">Delete</a>
                         @endif
                       </td>
                     </tr>

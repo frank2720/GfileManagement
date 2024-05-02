@@ -26,7 +26,7 @@
                       <th>Document Name</th>
                       <th> Uploaded By</th>
                       <th style="margin-right:16; margin-left:8; padding-left:16"> Date </th>
-                      <th></th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
