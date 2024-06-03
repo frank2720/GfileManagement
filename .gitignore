@@ -17,4 +17,4 @@ yarn-error.log
 /.vscode
 /public
 /resources/views
-
+/resources/assets
