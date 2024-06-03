@@ -6,9 +6,9 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Member>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\MonthlyContribution>
  */
-class MemberFactory extends Factory
+class MonthlyContributionFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +18,8 @@ class MemberFactory extends Factory
     public function definition(): array
     {
         return [
-            'fee'=>$this->faker->numberBetween(300,500),
-            'trcode'=>$this->faker->unique()->numerify('QRST###'),
+            'amount'=> $this->faker->numberBetween(1000,20000),
+            'trcode'=> $this->faker->unique()->numerify('QRST###'),
             'user_id'=> User::factory()
         ];
     }

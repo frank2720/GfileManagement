@@ -17,7 +17,8 @@ class PaymentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'trcode'=>$this->faker->unique()->numerify('QRST###'),
+            'phone'=>$this->faker->unique()->numerify('07########')
         ];
     }
 }
