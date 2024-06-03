@@ -15,10 +15,6 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-    <link rel="stylesheet" type="text/css" href="{{asset('css/demo.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style3.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('css/animate-custom.css')}}" />
 </head>
 <body>
     <div id="app">
@@ -33,14 +29,14 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    
+
                     <ul class="navbar-nav me-auto">
 
                     </ul>
 
-                    
+
                     <ul class="navbar-nav ms-auto">
-                        
+
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
